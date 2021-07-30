@@ -1,0 +1,13 @@
+ar.com.marianovalle.testbe
+ar.com.marianovalle.testbe.configuration
+ar.com.marianovalle.testbe.controller.assambler
+ar.com.marianovalle.testbe.controller.rest
+ar.com.marianovalle.testbe.domain.dto
+ar.com.marianovalle.testbe.domain.model
+ar.com.marianovalle.testbe.domain.projection
+ar.com.marianovalle.testbe.error
+ar.com.marianovalle.testbe.jwt
+ar.com.marianovalle.testbe.service.interfaces
+ar.com.marianovalle.testbe.service.repository
+ar.com.marianovalle.testbe.service.service
+ar.com.marianovalle.testbe.util.enums

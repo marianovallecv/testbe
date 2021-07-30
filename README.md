@@ -3,6 +3,18 @@
 Este repositorio de Git contiene el código fuente de la API **testbe**, ademas contiene informacion acerca de su uso.
 
 
+## Contenidos
+* [1. Concideraciones](#Concideraciones)
+* [1.1  Prerequisitos](#Prerequisitos)
+* [2. Instalación](#Instalacion)
+* [2.1 Obtener el codigo fuente](#Obtener el codigo fuente)
+* [2.2 Construyendo el proyecto](#Construyendo el proyecto)
+* [2.3 Creación de la base de datos](#Creacion de la base de datos)
+* [3. Trabajando con el IDE](#Trabajando con el IDE)
+* [4. Ejecucion de pruebas](#Ejecucion de pruebas)
+* [5. API](#API)
+* [6. Autores](#Autores)
+
 ## Concideraciones:
 Antes de importar este proyecto, tener en cuenta que solo esta configurado para correr localmente.
 Este proyecto está en un estado de prueba, actualmente en desarrollo.
@@ -13,14 +25,14 @@ Se usaran dos proyectos:
 
 En este apartado se trataran las especificaciones del **backend**.
 
-### Pre-requisitos
+### Prerequisitos
 - Tener instalado JRE 16.
 - Configurar las variables de entorno user **jdk-16.0.1**.
 - En caso de querer desarrollar funcionalidades contar con un IDE como por ejemplo Eclipse.
 
-### Instalación
+## Instalacion
 
-##### Obtener el código fuente
+##### Obtener el codigo fuente
 * Descargar el proyeco desde el [repositorio GITHUB](https://github.com/marianovallecv/testbe)
 
 ##### Construyendo el proyecto
@@ -36,24 +48,18 @@ Para construir un módulo específico, ejecute el comando: `gradle install` en el 
 ##### Corriendo el moduo spring boot
 Para ejecutar un módulo Spring Boot, ejecute el comando: `spring-boot:run` en el directorio del módulo.
 
-###Creacion de la base de datos:
+### Creacion de la base de datos:
 
 ##### Ejecutar dump
 Para crear la base de datos debe ejecutar el dum `"/testbe/src/main/resources/db/dump.sql"` en una base de datos MySQL.
 
-##### Trabajando con el IDE
+### Trabajando con el IDE
 Este repositorio contiene solamente un móduls.
 Simplemente puede importar ese módulo en particular en Eclipse o IntelliJ.
 
-##### Ejecucion de pruebas
+### Ejecucion de pruebas
 El comando `gradle install` desde dentro de un módulo ejecutará las pruebas unitarias en ese módulo.
 Para los módulos Spring, esto también ejecutará el `SpringContextTest` si está presente.
-
-Para ejecutar las pruebas de integración, use el comando:
-
-```
-gradle install -Pintegration-lite-first
-```
 
 ### Tecnologías utilizsadas:
 Listado de las tecnologías usadas para este proyecto:
@@ -175,7 +181,7 @@ curl --location --request DELETE 'http://localhost:8020/candidates/[ID]' \
 ### collection de Postman:
 - [Acceso a la API Test (Postman)](https://www.getpostman.com/collections/cd2e01c8f2698ac45129)
 
-# Autores
+## Autores
 * **Mariano Valle** - *Trabajo Inicial, Documentacion* - [marianovallecv](https://github.com/marianovallecv)
 
 Tambien puedes mirar la lista de todos mis [proyectos](https://github.com/marianovallecv).
