@@ -1,0 +1,72 @@
+#----------------------------------------------------------------------------------------------------------------------------------------
+server:
+  port: 8020
+
+spring:
+  thymeleaf:
+    cache: false
+  config:
+    activate:
+      on-profile: default
+
+  #main:
+    #banner-mode: off
+  output:
+    ansi:
+      enabled: ALWAYS
+
+  #----------------------------------------------------------------------------------------------------------------------------------------
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: admin
+    password: 231548
+    url: jdbc:mysql://localhost:3306/test?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&useTimezone=true&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    dbcp2:
+      validation-query: SELECT 1
+  jpa:
+    database: MYSQL
+    #TODO: Esto no debe ir en producción.
+    show-sql: true
+    #generate-ddl: true
+    
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        #TODO: Esto no debe ir en producción.
+        dll-auto: true
+        use-sql-comments: true
+        #Mostrar las entencias sql formateadas.
+        format_sql: true
+    hibernate:
+      use-new-id-generator-mappings: false
+
+#----------------------------------------------------------------------------------------------------------------------------------------
+jwt:
+  jti: project
+  secret: secret
+  expiration: 14400
+  all_urls: /**
+  oauth_url: /oauth/**
+  login_url: /oauth/login/**
+  header_authorization_key: Authorization
+  token_bearer_prefix: Bearer
+  issuer_info: https://www.project.com
+  route:
+    authentication:
+      path: auth
+      refresh: refresh
+
+#----------------------------------------------------------------------------------------------------------------------------------------
+logging:
+  pattern:
+    console: "%clr(%d{HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"   
+  level:
+    root: INFO
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE
+
