@@ -182,6 +182,6 @@ curl --location --request DELETE 'http://localhost:8020/candidates/[ID]' \
 - [Acceso a la API Test (Postman)](https://www.getpostman.com/collections/cd2e01c8f2698ac45129)
 
 ## Autores
-* **Mariano Valle** - *Trabajo Inicial, Documentacion* - [marianovallecv](https://github.com/marianovallecv)
+* **Mariano Valle** - *Trabajo Inicial, Documentacion* - [marianovallecv](https://github.com/marianovallecv/testbe/tree/master/doc)
 
 Tambien puedes mirar la lista de todos mis [proyectos](https://github.com/marianovallecv).
