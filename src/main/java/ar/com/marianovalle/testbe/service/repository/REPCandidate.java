@@ -9,7 +9,6 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import ar.com.marianovalle.testbe.domain.model.MDLCandidate;
-import ar.com.marianovalle.testbe.domain.projection.PRJCandidate;
 
 /**
  * Repository of candidate.

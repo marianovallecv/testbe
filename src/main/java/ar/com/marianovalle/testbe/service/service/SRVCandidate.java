@@ -12,7 +12,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import ar.com.marianovalle.testbe.domain.model.MDLCandidate;
-import ar.com.marianovalle.testbe.domain.projection.PRJCandidate;
 import ar.com.marianovalle.testbe.service.interfaces.INTCandidate;
 import ar.com.marianovalle.testbe.service.repository.REPCandidate;
 
@@ -26,7 +25,7 @@ import ar.com.marianovalle.testbe.service.repository.REPCandidate;
 public class SRVCandidate implements INTCandidate {
 	  
 	@Override
-	public Page<PRJCandidate> findAllCandidatesWithPagination(Pageable pageable) {
+	public Page<Object> findAllCandidatesWithPagination(Pageable pageable) {
 		return repository.findAllCandidatesWithPagination(pageable);
 	}
 

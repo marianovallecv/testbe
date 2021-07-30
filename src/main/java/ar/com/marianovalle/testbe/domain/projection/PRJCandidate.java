@@ -2,8 +2,6 @@ package ar.com.marianovalle.testbe.domain.projection;
 
 import org.springframework.stereotype.Component;
 
-import ar.com.marianovalle.testbe.domain.model.MDLCandidate;
-
 /**
  * Projection of candidate.
  * Se usa para devolver campos específicos.

@@ -5,11 +5,9 @@ import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import ar.com.marianovalle.testbe.domain.model.MDLCandidate;
-import ar.com.marianovalle.testbe.domain.projection.PRJCandidate;
 
 /**
  * Interface of candidate.
