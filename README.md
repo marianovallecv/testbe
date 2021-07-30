@@ -4,7 +4,7 @@ Este repositorio de Git contiene el código fuente de la API **testbe**, ademas c
 
 
 ## Contenidos
-* [1. Concideraciones](#Concideraciones)
+* [1. Considerations](#Considerations)
 * [1.1  Prerequisites](#Prerequisites)
 * [2. Instalation](#Instalation)
 * [2.1 Sources](#Sources)
@@ -12,11 +12,11 @@ Este repositorio de Git contiene el código fuente de la API **testbe**, ademas c
 * [2.3 Database](#Database)
 * [3. IDE](#IDE)
 * [4. Test](#Test)
-* [5. Tecnologías](#Tecnologias)
+* [5. Technologies](#Technologies)
 * [6. API](#API)
-* [7. Autores](#Autores)
+* [7. Author](#Author)
 
-## Concideraciones:
+## Considerations:
 Antes de importar este proyecto, tener en cuenta que solo esta configurado para correr localmente.
 Este proyecto está en un estado de prueba, actualmente en desarrollo.
 Se usaran dos proyectos:
@@ -62,7 +62,7 @@ Simplemente puede importar ese módulo en particular en Eclipse o IntelliJ.
 El comando `gradle install` desde dentro de un módulo ejecutará las pruebas unitarias en ese módulo.
 Para los módulos Spring, esto también ejecutará el `SpringContextTest` si está presente.
 
-## Tecnologias
+## Technologies
 Listado de las tecnologías usadas para este proyecto:
 * [Java](https://java.com): Version 16
 * [Spring Boot](https://spring.io/projects/spring-boot): Version 2.5.3
@@ -182,7 +182,7 @@ curl --location --request DELETE 'http://localhost:8020/candidates/[ID]' \
 ### collection de Postman:
 - [Acceso a la API Test (Postman)](https://www.getpostman.com/collections/cd2e01c8f2698ac45129)
 
-## Autores
+## Author
 * **Mariano Valle** - *Trabajo Inicial, Documentacion* - [marianovallecv](https://github.com/marianovallecv/testbe/tree/master/doc)
 
 Tambien puedes mirar la lista de todos mis [proyectos](https://github.com/marianovallecv).
