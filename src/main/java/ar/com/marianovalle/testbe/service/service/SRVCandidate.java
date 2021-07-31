@@ -23,7 +23,11 @@ import ar.com.marianovalle.testbe.service.repository.REPCandidate;
  */
 @Service
 public class SRVCandidate implements INTCandidate {
-	  
+	private static Logger loggerIN = LoggerFactory.getLogger(SRVCandidate.class);
+
+	@Autowired
+	private REPCandidate repository;
+	
 	@Override
 	public Page<Object> findAllCandidatesWithPagination(Pageable pageable) {
 		return repository.findAllCandidatesWithPagination(pageable);
@@ -38,11 +42,6 @@ public class SRVCandidate implements INTCandidate {
 	public Page<Object> findByDocument(String document, Pageable pageable) {
 		return repository.findByDocument(document, pageable);
 	}
-
-	private static Logger loggerIN = LoggerFactory.getLogger(SRVCandidate.class);
-
-	@Autowired
-	private REPCandidate repository;
 
 	@Override
 	@Transactional

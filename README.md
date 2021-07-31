@@ -19,7 +19,7 @@ Este repositorio de Git contiene el código fuente de la API **testbe**, ademas c
 ## Considerations
 Antes de importar este proyecto, tener en cuenta que solo esta configurado para correr localmente.
 Este proyecto está en un estado de prueba, actualmente en desarrollo.
-Se usaran dos proyectos:
+Se usarán dos proyectos:
 
 * **testbe:** Para ejecutar el backend:
 * **testfe:** Para ejecutar el frontend
@@ -28,7 +28,7 @@ En este apartado se trataran las especificaciones del **backend**.
 
 ## Prerequisites
 - Tener instalado JRE 16.
-- Configurar las variables de entorno user **jdk-16.0.1**.
+- Configurar las variables de entorno user **jdk-16.0.1** (solo para desarrollo).
 - En caso de querer desarrollar funcionalidades contar con un IDE como por ejemplo Eclipse.
 
 ## Instalation
@@ -37,17 +37,14 @@ En este apartado se trataran las especificaciones del **backend**.
 * Descargar el proyeco desde el [repositorio GITHUB](https://github.com/marianovallecv/testbe)
 
 ### Build
-Podemos invocar el siguiente comando desde la raíz del repositorio si queremos construir el repositorio completo con solo las Pruebas unitarias habilitadas: 
+Podemos invocar el siguiente comando desde la raíz del repositorio si queremos construir el repositorio completo con las Pruebas unitarias habilitadas:
 
 ```
 gradle build --refresh-dependencies
 ```
 
-### Construyendo un modulo simple
-Para construir un módulo específico, ejecute el comando: `gradle install` en el directorio del módulo
-
-### Corriendo el moduo spring boot
-Para ejecutar un módulo Spring Boot, ejecute el comando: `spring-boot:run` en el directorio del módulo.
+### Corriendo spring boot
+Para ejecutar un módulo Spring Boot, ejecute el comando: `gradle bootRun` en el directorio del proyecto.
 
 ### Database
 
@@ -89,7 +86,7 @@ curl --location --request GET 'http://localhost:8020/auth/login' \
 ### Candidates:
 
 #### Get one:
-Reemplazar [ID] por el id deseado.
+Reemplazar [ID] por el id deseado para obtener la información completa de un candidato en particular.
 
 ```
 curl --location --request GET 'http://localhost:8020/candidates/[ID]' \
@@ -97,6 +94,7 @@ curl --location --request GET 'http://localhost:8020/candidates/[ID]' \
 ```
 
 #### Get pages:
+Obtener la información completa de todos los candidatos.
 
 ```
 curl --location --request GET 'http://localhost:8020/candidates/' \
@@ -104,7 +102,7 @@ curl --location --request GET 'http://localhost:8020/candidates/' \
 ```
 
 #### Get pages filter:
-Reemplazar [DATA] por el documento o nombre t apellido.
+Reemplazar [DATA] por el documento o nombre t apellido, para obtener una paginacón de los candidatos (nombre completo y DNI).
 
 ```
 curl --location --request GET 'http://127.0.0.1:8020/candidates/filter/[DATA]' \
@@ -112,7 +110,8 @@ curl --location --request GET 'http://127.0.0.1:8020/candidates/filter/[DATA]' \
 ```
 
 #### Get by email:
-Reemplazar [EMAIL] por el email deseado.
+Reemplazar [EMAIL] por el email deseado, para obtener la información completa de un candidato en particular filtrado por email.
+.
 
 ```
 curl --location --request GET 'http://localhost:8020/candidates/email/[EMAIL]' \
@@ -120,7 +119,7 @@ curl --location --request GET 'http://localhost:8020/candidates/email/[EMAIL]' \
 ```
 
 #### Get by document:
-Reemplazar [DOCUMENT] por el documento deseado.
+Reemplazar [DOCUMENT] por el documento deseado, para obtener la información completa de un candidato en particular filtrado por documento.
 
 ```
 curl --location --request GET 'http://localhost:8020/candidates/document/[DOCUMENT]' \
@@ -128,15 +127,7 @@ curl --location --request GET 'http://localhost:8020/candidates/document/[DOCUME
 ```
 
 #### Get by fullName:
-Reemplazar [FULL_NAME] por el nombre y apellido deseado.
-
-```
-curl --location --request GET 'http://localhost:8020/candidates/fullName/[FULL_NAME]' \
---header 'Authorization: Bearer Bearer [TOKEN]'
-```
-
-#### Get by document:
-Reemplazar [FULL_NAME] por el nombre y apellido deseado.
+Reemplazar [FULL_NAME] por el nombre y apellido deseado, para obtener la información completa de un candidato en particular filtrado por nombre y apellido.
 
 ```
 curl --location --request GET 'http://localhost:8020/candidates/fullName/[FULL_NAME]' \
@@ -144,7 +135,7 @@ curl --location --request GET 'http://localhost:8020/candidates/fullName/[FULL_N
 ```
 
 #### Post one:
-Reemplazar "[FULL_NAME]", [DOCUMENT], "[BIRTH]", "[ADDRESS]", "[PHONE]", "[EMAIL]" por los valores deseados.
+Reemplazar "[FULL_NAME]", [DOCUMENT], "[BIRTH]", "[ADDRESS]", "[PHONE]", "[EMAIL]" por los valores deseados, para crear un nuevo canditato.
 
 ```
 curl --location --request POST 'http://localhost:8020/candidates/' \
@@ -162,7 +153,7 @@ curl --location --request POST 'http://localhost:8020/candidates/' \
 ```
 
 #### Put one:
-Reemplazar [ID] por el id a modificar y "[FULL_NAME]", [DOCUMENT], "[BIRTH]", "[ADDRESS]", "[PHONE]", "[EMAIL]" por los valores deseados.
+Reemplazar [ID] por el id a modificar y "[FULL_NAME]", [DOCUMENT], "[BIRTH]", "[ADDRESS]", "[PHONE]", "[EMAIL]" por los valores deseados, para modificar un canditato.
 
 ```
 curl --location --request PUT 'http://localhost:8020/candidates/[ID]' \
@@ -180,7 +171,7 @@ curl --location --request PUT 'http://localhost:8020/candidates/[ID]' \
 ```
 
 #### Delete one:
-Reemplazar [ID] por el id a eliminar.
+Reemplazar [ID] por el id deseado, para eliminar un canditato.
 
 ```
 curl --location --request DELETE 'http://localhost:8020/candidates/[ID]' \
@@ -189,7 +180,7 @@ curl --location --request DELETE 'http://localhost:8020/candidates/[ID]' \
 ```
 
 ### collection de Postman:
-- [Acceso a la API Test (Postman)](https://www.getpostman.com/collections/33fa95585b352209f046)
+- [Acceso a la API Test (Postman)](https://www.getpostman.com/collections/a610283aa9bfbb22443b)
 
 ## Author
 * **Mariano Valle** - *Trabajo Inicial, Documentacion* - [marianovallecv](https://github.com/marianovallecv/testbe/tree/master/doc)

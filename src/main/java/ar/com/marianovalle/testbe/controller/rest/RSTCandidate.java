@@ -16,6 +16,7 @@ import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.IanaLinkRelations;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -49,7 +50,7 @@ import ar.com.marianovalle.testbe.error.ERRResourceNotFound;
 @RestController
 @RequestMapping(path = "/candidates")
 @CrossOrigin(origins = "http://localhost:4200", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH, RequestMethod.DELETE })
-//@PreAuthorize("hasRole('ADMIN')")
+@PreAuthorize("hasRole('ADMIN')")
 public class RSTCandidate {
 	private static final Logger loggerIn = LoggerFactory.getLogger(RSTCandidate.class);
 	
@@ -133,7 +134,9 @@ public class RSTCandidate {
 			return new ResponseEntity<>(new DTOMessage("El nombre de candidato ya existe."), HttpStatus.BAD_REQUEST);
 		if(service.existsByEmail(dtoCandidate.getEmail()))
 			return new ResponseEntity<>(new DTOMessage("El email ya existe."), HttpStatus.BAD_REQUEST);	
-	
+		if(service.existsByDocument(dtoCandidate.getDocument()))
+			return new ResponseEntity<>(new DTOMessage("El documento ya existe."), HttpStatus.BAD_REQUEST);	
+
 		MDLCandidate candidate = assembler.convertToEntity(dtoCandidate);
 	
 		EntityModel<DTOCandidate> entityModel = assembler.toModelDto(service.save(candidate));
