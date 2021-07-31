@@ -73,19 +73,25 @@ public class RSTCandidate {
 		return ResponseEntity.ok(pagesDTO);
 	}
 	
-//	@GetMapping(value = "/")
-//	public ResponseEntity<Page<PRJCandidate>> getAll(
-//		@RequestParam (required = false, defaultValue = "0") int page,
-//		@RequestParam (required = false, defaultValue = "10") int size,
-//		@RequestParam (required = false, defaultValue = "id") String column,
-//		@RequestParam (required = false, defaultValue = "true") boolean isAscending){
-//		loggerIn.info("pages");
-//		
-//		Page<PRJCandidate> pages = service.findAllCandidatesWithPagination(PageRequest.of(page, size, (isAscending)?Sort.by(column):Sort.by(column).descending()));
-//		//Page<DTOCandidate> pagesDTO = assembler.convertListDTOLToPageDTO(pages);
-//
-//		return ResponseEntity.ok(pages);
-//	}
+	@GetMapping(value = "/filter/{data}")
+	public ResponseEntity<Page<PRJCandidate>> getAll(
+		@PathVariable(value = "data") String data,
+		@RequestParam (required = false, defaultValue = "0") int page,
+		@RequestParam (required = false, defaultValue = "10") int size,
+		@RequestParam (required = false, defaultValue = "id") String column,
+		@RequestParam (required = false, defaultValue = "true") boolean isAscending){
+		loggerIn.info("pages");
+		
+		Page<PRJCandidate> pages;
+		
+		if(data.matches("[+-]?\\d*(\\.\\d+)?")) {
+			pages = service.findByDocument(data, PageRequest.of(page, size, (isAscending)?Sort.by(column):Sort.by(column).descending()));	
+		}else {
+			pages = service.findByFullName(data, PageRequest.of(page, size, (isAscending)?Sort.by(column):Sort.by(column).descending()));	
+		}
+
+		return ResponseEntity.ok(pages);
+	}
 	
 	@GetMapping(value = "/{id}")
 	public EntityModel<DTOCandidate> get(@PathVariable Integer id) {

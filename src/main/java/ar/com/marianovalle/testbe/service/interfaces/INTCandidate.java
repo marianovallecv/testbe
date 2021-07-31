@@ -30,5 +30,7 @@ public interface INTCandidate{
 	boolean existsByEmail(String email);
 	Page<MDLCandidate> findAll(Pageable pageable);
 	<T>Page<T> findAllCandidatesWithPagination(Pageable pageable);	
+	<T>Page<T> findByDocument(String document, Pageable pageable);
+	<T>Page<T> findByFullName(String fullName, Pageable pageable);
 	List<MDLCandidate> findAll();
 }

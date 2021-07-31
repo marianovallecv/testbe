@@ -33,7 +33,7 @@ spring:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
         #TODO: Esto no debe ir en producción.
-        dll-auto: true
+        #dll-auto: true
         use-sql-comments: true
         #Mostrar las entencias sql formateadas.
         format_sql: true

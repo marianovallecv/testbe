@@ -28,6 +28,16 @@ public class SRVCandidate implements INTCandidate {
 	public Page<Object> findAllCandidatesWithPagination(Pageable pageable) {
 		return repository.findAllCandidatesWithPagination(pageable);
 	}
+	
+	@Override
+	public Page<Object> findByFullName(String fullName, Pageable pageable) {
+		return repository.findByFullName(fullName, pageable);
+	}
+	
+	@Override
+	public Page<Object> findByDocument(String document, Pageable pageable) {
+		return repository.findByDocument(document, pageable);
+	}
 
 	private static Logger loggerIN = LoggerFactory.getLogger(SRVCandidate.class);
 
