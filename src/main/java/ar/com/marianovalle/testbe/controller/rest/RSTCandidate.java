@@ -50,7 +50,7 @@ import ar.com.marianovalle.testbe.error.ERRResourceNotFound;
 @RestController
 @RequestMapping(path = "/candidates")
 @CrossOrigin(origins = "http://localhost:4200", methods = { RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH, RequestMethod.DELETE })
-@PreAuthorize("hasRole('ADMIN')")
+//@PreAuthorize("hasRole('ADMIN')")
 public class RSTCandidate {
 	private static final Logger loggerIn = LoggerFactory.getLogger(RSTCandidate.class);
 	
